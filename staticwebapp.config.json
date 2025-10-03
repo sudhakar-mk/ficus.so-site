@@ -1,0 +1,11 @@
+{
+  "navigationFallback": {
+    "rewrite": "/home.html",
+    "exclude": [
+      "/images/*",
+      "/css/*",
+      "/js/*",
+      "/fonts/*"
+    ]
+  }
+}
