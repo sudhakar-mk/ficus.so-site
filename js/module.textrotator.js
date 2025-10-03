@@ -1,1 +1,16 @@
-SEMICOLON.Core.getVars.fn.textrotator=e=>{const a=SEMICOLON.Core;a.loadJS({file:"plugins.textrotator.js",id:"canvas-textrotator-js",jsFolder:!0}),a.isFuncTrue(()=>jQuery().Morphext&&"undefined"!=typeof Typed).then(t=>!!t&&(a.initFunction({class:"has-plugin-textrotator",event:"pluginTextRotatorReady"}),(e=a.getSelector(e)).length<1||void e.each(function(){var u=jQuery(this),t=u.attr("data-typed")||"false",n=u.find(".t-rotate"),e=u.attr("data-rotate")||"fade",a=u.attr("data-speed")||1200,l=u.attr("data-separator")||",";if("true"==t){let t=n.html().split(l),e=u.attr("data-loop")||"true",a=u.attr("data-shuffle"),r=u.attr("data-cursor")||"true",o=u.attr("data-speed")||50,d=u.attr("data-backspeed")||30,s=u.attr("data-backdelay");e="true"==e,a="true"==a,r="true"==r,n.html("").addClass("plugin-typed-init");new Typed(n.get(0),{strings:t,typeSpeed:Number(o),loop:e,shuffle:a,showCursor:r,backSpeed:Number(d),backDelay:Number(s)})}else n.Morphext({animation:e,separator:l,speed:Number(a)})})))};
+﻿// Auto-generated wrapper: module.textrotator.js
+import * as fn from './fn.textrotator.js';
+
+let impl = null;
+if (fn -and (typeof fn.default -eq 'function')) { impl = fn.default; }
+elseif (fn -and (typeof (fn.textrotator) -eq 'function')) { impl = fn.textrotator; }
+elseif (typeof fn -eq 'function') { impl = fn; }
+elseif ( (Get-Variable -Name 'window' -ErrorAction SilentlyContinue) -and ( (Get-Variable -Name 'window' -ValueOnly).textrotator -is [System.Delegate] ) ) { impl = (Get-Variable -Name 'window' -ValueOnly).textrotator; }
+
+export default function(...args) {
+  if (!impl) {
+    console.error('No implementation found for module.textrotator');
+    return;
+  }
+  return impl.apply(this, args);
+}

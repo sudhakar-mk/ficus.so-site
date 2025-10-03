@@ -1,1 +1,16 @@
-SEMICOLON.Core.getVars.fn.gototop=o=>{var e=SEMICOLON.Core;if((o=e.getSelector(o,!1)).length<1)return!0;CanvasGoToTop(o[0]),CanvasGoToTopScroll(o[0]),window.addEventListener("scroll",()=>{CanvasGoToTopScroll(o[0])},{passive:!0})};const CanvasGoToTop=o=>{SEMICOLON.Core;let e=o.getAttribute("data-speed")||700,t=o.getAttribute("data-easing");o.onclick=o=>{t?jQuery("body,html").stop(!0).animate({scrollTop:0},Number(e),t):window.scrollTo({top:0,behavior:"smooth"}),o.preventDefault()}},CanvasGoToTopScroll=o=>{var e=SEMICOLON.Core.getVars.elBody.classList,t=o.getAttribute("data-mobile")||"false",o=o.getAttribute("data-offset")||450;if("false"==t&&(e.contains("device-xs")||e.contains("device-sm")||e.contains("device-md")))return!0;window.scrollY>Number(o)?e.add("gototop-active"):e.remove("gototop-active")};
+﻿// Auto-generated wrapper: module.gototop.js
+import * as fn from './fn.gototop.js';
+
+let impl = null;
+if (fn -and (typeof fn.default -eq 'function')) { impl = fn.default; }
+elseif (fn -and (typeof (fn.gototop) -eq 'function')) { impl = fn.gototop; }
+elseif (typeof fn -eq 'function') { impl = fn; }
+elseif ( (Get-Variable -Name 'window' -ErrorAction SilentlyContinue) -and ( (Get-Variable -Name 'window' -ValueOnly).gototop -is [System.Delegate] ) ) { impl = (Get-Variable -Name 'window' -ValueOnly).gototop; }
+
+export default function(...args) {
+  if (!impl) {
+    console.error('No implementation found for module.gototop');
+    return;
+  }
+  return impl.apply(this, args);
+}

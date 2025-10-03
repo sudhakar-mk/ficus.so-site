@@ -1,1 +1,16 @@
-SEMICOLON.Core.getVars.fn.stickfooteronsmall=e=>{var t=SEMICOLON.Core;if((e=t.getSelector(e,!1)).length<1)return!0;t.getVars.elFooter.style.marginTop="";var e=t.viewport().height,r=t.getVars.elWrapper.offsetHeight;!t.getVars.elBody.classList.contains("sticky-footer")&&"undefined"!==t.getVars.elFooter&&t.getVars.elWrapper.contains(t.getVars.elFooter)&&r<e&&(t.getVars.elFooter.style.marginTop=e-r+"px"),t.getVars.resizers.stickfooter=()=>SEMICOLON.Base.stickFooterOnSmall()};
+﻿// Auto-generated wrapper: module.stickfooteronsmall.js
+import * as fn from './fn.stickfooteronsmall.js';
+
+let impl = null;
+if (fn -and (typeof fn.default -eq 'function')) { impl = fn.default; }
+elseif (fn -and (typeof (fn.stickfooteronsmall) -eq 'function')) { impl = fn.stickfooteronsmall; }
+elseif (typeof fn -eq 'function') { impl = fn; }
+elseif ( (Get-Variable -Name 'window' -ErrorAction SilentlyContinue) -and ( (Get-Variable -Name 'window' -ValueOnly).stickfooteronsmall -is [System.Delegate] ) ) { impl = (Get-Variable -Name 'window' -ValueOnly).stickfooteronsmall; }
+
+export default function(...args) {
+  if (!impl) {
+    console.error('No implementation found for module.stickfooteronsmall');
+    return;
+  }
+  return impl.apply(this, args);
+}

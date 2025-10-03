@@ -1,1 +1,16 @@
-SEMICOLON.Core.getVars.fn.html5video=e=>{var t=SEMICOLON.Core;if(t.initFunction({class:"has-plugin-html5video",event:"pluginHtml5VideoReady"}),(e=t.getSelector(e,!1,!1)).length<1)return!0;e.forEach(e=>{let t=e.querySelector("video"),l=e.getAttribute("data-ratio")||"16/9";if(!t)return!0;l=l.split("/"),t.style.left="",t.style.top="";let i=e.offsetWidth,s=e.offsetHeight,r=Number(l[0])*s/Number(l[1]),o=s;var a;r<i&&(r=i,o=Number(l[1])*i/Number(l[0])),t.style.width=r+"px",t.style.height=o+"px",o>s&&(t.style.left="",t.style.top=-(o-s)/2+"px"),r>i&&(t.style.left=-(r-i)/2+"px",t.style.top=""),SEMICOLON.Mobile.any()&&!e.classList.contains("no-placeholder")&&(""!=(a=t.getAttribute("poster"))&&(e.innerHTML+='<div class="video-placeholder" style="background-image: url('+a+');"></div>'),t.classList.add("d-none"))}),t.getVars.resizers.html5video=()=>SEMICOLON.Modules.html5Video()};
+﻿// Auto-generated wrapper: module.html5video.js
+import * as fn from './fn.html5video.js';
+
+let impl = null;
+if (fn -and (typeof fn.default -eq 'function')) { impl = fn.default; }
+elseif (fn -and (typeof (fn.html5video) -eq 'function')) { impl = fn.html5video; }
+elseif (typeof fn -eq 'function') { impl = fn; }
+elseif ( (Get-Variable -Name 'window' -ErrorAction SilentlyContinue) -and ( (Get-Variable -Name 'window' -ValueOnly).html5video -is [System.Delegate] ) ) { impl = (Get-Variable -Name 'window' -ValueOnly).html5video; }
+
+export default function(...args) {
+  if (!impl) {
+    console.error('No implementation found for module.html5video');
+    return;
+  }
+  return impl.apply(this, args);
+}

@@ -1,1 +1,16 @@
-SEMICOLON.Core.getVars.fn.dataheights=t=>{const c=SEMICOLON.Core;if(c.initFunction({class:"has-plugin-dataheights",event:"pluginDataHeightsReady"}),(t=c.getSelector(t,!1,!1)).length<1)return!0;t.forEach(t=>{let e=t.getAttribute("data-height-xs")||"auto",i=t.getAttribute("data-height-sm")||e,a=t.getAttribute("data-height-md")||i,s=t.getAttribute("data-height-lg")||a,g=t.getAttribute("data-height-xl")||s,h=t.getAttribute("data-height-xxl")||g,n=c.getVars.elBody.classList,d;n.contains("device-xs")?d=e:n.contains("device-sm")?d=i:n.contains("device-md")?d=a:n.contains("device-lg")?d=s:n.contains("device-xl")?d=g:n.contains("device-xxl")&&(d=h),d&&(t.style.height=isNaN(d)?d:d+"px")}),c.getVars.resizers.dataHeights=()=>SEMICOLON.Modules.dataHeights()};
+﻿// Auto-generated wrapper: module.dataheights.js
+import * as fn from './fn.dataheights.js';
+
+let impl = null;
+if (fn -and (typeof fn.default -eq 'function')) { impl = fn.default; }
+elseif (fn -and (typeof (fn.dataheights) -eq 'function')) { impl = fn.dataheights; }
+elseif (typeof fn -eq 'function') { impl = fn; }
+elseif ( (Get-Variable -Name 'window' -ErrorAction SilentlyContinue) -and ( (Get-Variable -Name 'window' -ValueOnly).dataheights -is [System.Delegate] ) ) { impl = (Get-Variable -Name 'window' -ValueOnly).dataheights; }
+
+export default function(...args) {
+  if (!impl) {
+    console.error('No implementation found for module.dataheights');
+    return;
+  }
+  return impl.apply(this, args);
+}

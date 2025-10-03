@@ -1,1 +1,16 @@
-SEMICOLON.Core.getVars.fn.parallax=e=>{const l=SEMICOLON.Core;l.loadJS({file:"plugins.parallax.js",id:"canvas-parallax-js",jsFolder:!0}),l.isFuncTrue(()=>"undefined"!=typeof simpleParallax).then(a=>{if(!a)return!1;if(l.initFunction({class:"has-plugin-parallax",event:"pluginParallaxReady"}),(e=l.getSelector(e,!1)).length<1)return!0;let n=[],o=0;e.forEach(a=>{let e=a.getAttribute("data-parallax-speed")||.4,l=a.getAttribute("data-parallax-scale")||1.25,t=a.getAttribute("data-parallax-overflow")||!1,r=a.getAttribute("data-parallax-max-transition")||0,i=a.getAttribute("data-mobile")||"false",s=a.getAttribute("data-direction")||"up";"true"==t&&(t=!0),SEMICOLON.Mobile.any()&&"false"==i?a.classList.add("mobile-parallax"):n[o]=new simpleParallax(a,{orientation:s,scale:Number(l),overflow:t,delay:Number(e),maxTransition:Number(r)}),o++}),l.getVars.resizers.parallax=()=>SEMICOLON.Modules.parallax()})};
+﻿// Auto-generated wrapper: module.parallax.js
+import * as fn from './fn.parallax.js';
+
+let impl = null;
+if (fn -and (typeof fn.default -eq 'function')) { impl = fn.default; }
+elseif (fn -and (typeof (fn.parallax) -eq 'function')) { impl = fn.parallax; }
+elseif (typeof fn -eq 'function') { impl = fn; }
+elseif ( (Get-Variable -Name 'window' -ErrorAction SilentlyContinue) -and ( (Get-Variable -Name 'window' -ValueOnly).parallax -is [System.Delegate] ) ) { impl = (Get-Variable -Name 'window' -ValueOnly).parallax; }
+
+export default function(...args) {
+  if (!impl) {
+    console.error('No implementation found for module.parallax');
+    return;
+  }
+  return impl.apply(this, args);
+}

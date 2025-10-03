@@ -1,1 +1,16 @@
-SEMICOLON.Core.getVars.fn.accordions=e=>{const s=SEMICOLON.Core;if(s.initFunction({class:"has-plugin-accordions",event:"pluginAccordionsReady"}),(e=s.getSelector(e)).length<1)return!0;e.each(function(){let o=jQuery(this),e=o.attr("data-state"),a=o.attr("data-active")||1,t=o.attr("data-active-class")||"",n=o.attr("data-collapsible")||"false",i=location.hash,c;a=Number(a)-1,void 0!==i&&""!=i&&0<(c=o.find(".accordion-header"+i)).length&&(a=c.index()/2),o.find(".accordion-content").hide(),"closed"!=e&&o.find(".accordion-header:eq("+Number(a)+")").addClass("accordion-active "+t).next().show(),o.find(".accordion-header").off("click").on("click",function(){let e=jQuery(this);return e.next().is(":hidden")?(o.find(".accordion-header").removeClass("accordion-active "+t).next().slideUp("normal"),e.toggleClass("accordion-active "+t,!0).next().stop(!0,!0).slideDown("normal",function(){(jQuery("body").hasClass("device-sm")||jQuery("body").hasClass("device-xs"))&&o.hasClass("scroll-on-open")&&jQuery("html,body").stop(!0,!0).animate({scrollTop:e.offset().top-(SEMICOLON.initialize.topScrollOffset()-40)},800,"easeOutQuad"),s.runContainerModules(e.next()[0])})):"true"==n&&e.toggleClass("accordion-active "+t,!1).next().stop(!0,!0).slideUp("normal"),!1})})};
+﻿// Auto-generated wrapper: module.accordions.js
+import * as fn from './fn.accordions.js';
+
+let impl = null;
+if (fn -and (typeof fn.default -eq 'function')) { impl = fn.default; }
+elseif (fn -and (typeof (fn.accordions) -eq 'function')) { impl = fn.accordions; }
+elseif (typeof fn -eq 'function') { impl = fn; }
+elseif ( (Get-Variable -Name 'window' -ErrorAction SilentlyContinue) -and ( (Get-Variable -Name 'window' -ValueOnly).accordions -is [System.Delegate] ) ) { impl = (Get-Variable -Name 'window' -ValueOnly).accordions; }
+
+export default function(...args) {
+  if (!impl) {
+    console.error('No implementation found for module.accordions');
+    return;
+  }
+  return impl.apply(this, args);
+}
